@@ -15,6 +15,7 @@
 		BD1548422C584DE60010A056 /* petivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1548412C584DE60010A056 /* petivityTests.swift */; };
 		BD15484C2C584DE60010A056 /* petivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15484B2C584DE60010A056 /* petivityUITests.swift */; };
 		BD15484E2C584DE60010A056 /* petivityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15484D2C584DE60010A056 /* petivityUITestsLaunchTests.swift */; };
+		BD3461612C5C331500228649 /* petFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3461602C5C331500228649 /* petFeatures.swift */; };
 		BD42E78C2C5AD83500B89DCC /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42E78B2C5AD83500B89DCC /* userInfo.swift */; };
 		BDBE81F22C598FFC0069095A /* shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE81F12C598FFC0069095A /* shop.swift */; };
 		BDBE81F62C59902A0069095A /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE81F52C59902A0069095A /* home.swift */; };
@@ -51,6 +52,7 @@
 		BD1548472C584DE60010A056 /* petivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = petivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD15484B2C584DE60010A056 /* petivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petivityUITests.swift; sourceTree = "<group>"; };
 		BD15484D2C584DE60010A056 /* petivityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petivityUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD3461602C5C331500228649 /* petFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petFeatures.swift; sourceTree = "<group>"; };
 		BD42E78B2C5AD83500B89DCC /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		BDBE81F12C598FFC0069095A /* shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shop.swift; sourceTree = "<group>"; };
 		BDBE81F52C59902A0069095A /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				BD42E78B2C5AD83500B89DCC /* userInfo.swift */,
 				BD12008C2C5AEE5100BCD391 /* timer.swift */,
 				BDBE81F12C598FFC0069095A /* shop.swift */,
+				BD3461602C5C331500228649 /* petFeatures.swift */,
 				BDBE81F52C59902A0069095A /* home.swift */,
 				BDBE81F72C59903D0069095A /* pethouse.swift */,
 				BDBE81F92C5990620069095A /* info.swift */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3461612C5C331500228649 /* petFeatures.swift in Sources */,
 				BD1548332C584DE50010A056 /* ContentView.swift in Sources */,
 				BD1548312C584DE50010A056 /* petivityApp.swift in Sources */,
 				BDBE81F62C59902A0069095A /* home.swift in Sources */,

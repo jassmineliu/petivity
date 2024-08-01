@@ -8,10 +8,15 @@
 
 
 import SwiftUI
+import SwiftData
+
 struct ContentView: View {
     
     @State private var isActive = false
     @Environment(\.modelContext) var modelContext
+    @Query var userRead: [userStuff]
+    @State var userInfo: [userStuff] = []
+    
 
     
   // @State private var placeholder = ""
@@ -23,7 +28,7 @@ struct ContentView: View {
         VStack {
           HStack {
             Spacer()
-            NavigationLink(destination: info())
+            NavigationLink(destination: info(userInfo: $userInfo).navigationBarBackButtonHidden(true))
             {Text ("?")
               .padding()}
                 .fontWeight(.medium)
@@ -53,7 +58,7 @@ struct ContentView: View {
             .padding(.bottom, 20.0)
           // .font(.smallTitle)
           // link to navigation page
-          NavigationLink(destination: home(), isActive: $isActive) {
+            NavigationLink(destination: home(userInfo: $userInfo).navigationBarBackButtonHidden(true), isActive: $isActive) {
             Text("START") }
               .font(.custom("Courier New", size: 25))
               .fontWeight(.bold)
@@ -61,18 +66,27 @@ struct ContentView: View {
               .padding()
             
               .onChange(of: isActive) {
-                  addperson()
+                  
+                  if userRead.isEmpty {
+                      addperson()
+                  }
+                  
               }
           // background rectangle for start
           .background(Rectangle().frame(width: 175, height: 65).foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255)).cornerRadius(15))
           Spacer()
         }
       }
+        
+      .onAppear {
+                      userInfo = userRead // Initialize userInfo after the view appears
+                  }
+        
     }
   } // body
     
     func addperson() {
-        let toDo = userStuff(coins: 0, totalMinutes: 0, totalFish: 0)
+        let toDo = userStuff(coins: 0, totalMinutes: 0, totalFish: 0, petName: "", petType: "")
         modelContext.insert(toDo)
     }
 }

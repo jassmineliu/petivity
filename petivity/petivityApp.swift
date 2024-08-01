@@ -12,6 +12,8 @@ import SwiftData
 
 @main
 struct petivityApp: App {
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

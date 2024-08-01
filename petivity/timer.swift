@@ -14,8 +14,10 @@ struct timer: View {
     @State private var isRunning: Bool = false
     @State private var startStop: String = "start"
     
-    @Query var user: [userStuff]
+    
+//    @Query var user: [userStuff]
     @Environment(\.modelContext) var modelContext
+    @Binding var userInfo: [userStuff]
         
     var body: some View {
         
@@ -75,8 +77,13 @@ struct timer: View {
                         
                         
                         Button {
-                            user[0].coins += (Int)(timeRemaining / 300)
+                            
+                            userInfo[0].coins += (Int)(timeRemaining / 300)
+                            userInfo[0].totalMinutes += (Int)(timeRemaining / 60)
                             timeRemaining = 0
+//                            userInfo[0].coins = 0
+//                            userInfo[0].totalMinutes = 0
+//                            userInto[0].totalFish = 0
                             
                         } label: {
                             
@@ -91,12 +98,12 @@ struct timer: View {
                         
                     } //end HStack that makes buttons
                     
-                    Text("coins earned: \(user[0].coins)")
+                    Text("coins earned: \(userInfo[0].coins)")
                         .font(.custom("Courier New", size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
                     
-                    Text("total minutes studied: \(user[0].coins)")
+                    Text("total minutes studied: \(userInfo[0].totalMinutes)")
                         .font(.custom("Courier New", size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
@@ -107,6 +114,19 @@ struct timer: View {
                 
             } //end ZStack
         } //end navigation stack
+        
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                NavigationLink(destination: home(userInfo: $userInfo).navigationBarBackButtonHidden(true)) {
+                    Image("home")
+                        .resizable()
+                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .frame(height:50)
+                }
+              
+            }
+        } //end toolbar
+        
     } // end body
     
         private func formattedTime() -> String {

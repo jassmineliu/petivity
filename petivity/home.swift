@@ -13,7 +13,9 @@ import SwiftData
 struct home: View {
     
     @Environment(\.modelContext) var modelContext
+    @Binding var userInfo: [userStuff]
 
+    
     var body: some View {
         NavigationStack {
                     
@@ -35,7 +37,7 @@ struct home: View {
                                 
                             
                             // go to timer
-                            NavigationLink(destination: timer()) {
+                            NavigationLink(destination: timer(userInfo: $userInfo).navigationBarBackButtonHidden(true)) {
                                 Text("timer")
                                     .font(.custom("Courier New", size: 25))
                                     .fontWeight(.bold)
@@ -49,7 +51,7 @@ struct home: View {
                             
                             
                             // go to shop
-                            NavigationLink(destination: shop()) {
+                            NavigationLink(destination: shop(userInfo: $userInfo).navigationBarBackButtonHidden(true)) {
                                 Text("shop")
                                     .font(.custom("Courier New", size: 25))
                                     .fontWeight(.bold)
@@ -63,7 +65,7 @@ struct home: View {
                             .background(Rectangle().frame(width: 175, height: 70.0).foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255)).cornerRadius(15))
                             
                             // go to pet house
-                            NavigationLink(destination: pethouse()) {
+                            NavigationLink(destination: pethouse(userInfo: $userInfo).navigationBarBackButtonHidden(true)) {
                                 Text("pet house")
                                     .font(.custom("Courier New", size: 25))
                                     .fontWeight(.bold)
@@ -77,12 +79,13 @@ struct home: View {
                         }
                     }
                 }
+        
     } // end body
     
     
     
 } // end struct
 
-#Preview {
-    home()
-}
+//#Preview {
+//    home()
+//}
