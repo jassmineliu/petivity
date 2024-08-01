@@ -67,9 +67,9 @@ struct ContentView: View {
             
               .onChange(of: isActive) {
                   
-                  if userRead.isEmpty {
+                 
                       addperson()
-                  }
+                  
                   
               }
           // background rectangle for start

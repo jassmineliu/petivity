@@ -23,7 +23,7 @@ struct petFeatures: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
                     .padding()
-                Spacer()
+                
                 TextField("Enter pet Name", text : $userInfo[0].petName )
                     .padding()
                     .background(Color.white)

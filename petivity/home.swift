@@ -79,6 +79,27 @@ struct home: View {
                         }
                     }
                 }
+        .toolbar {
+              ToolbarItemGroup(placement: .navigationBarLeading) {
+                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                  Text("<-")
+                        .font(.custom("Courier New", size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
+                        .padding(.leading, 250.0)
+                }
+                  NavigationLink(destination: about().navigationBarBackButtonHidden(true)) {
+                    Text("about")
+                          .font(.custom("Courier New", size: 20))
+                          .fontWeight(.bold)
+                          .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
+                          .padding(.leading, 250.0)
+                  }
+
+            }
+        } //end toolbar
+        
+        
         
     } // end body
     
