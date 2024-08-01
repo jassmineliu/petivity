@@ -86,14 +86,14 @@ struct home: View {
                         .font(.custom("Courier New", size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
-                        .padding(.leading, 250.0)
+                        .padding(.trailing, 250.0)
                 }
                   NavigationLink(destination: about().navigationBarBackButtonHidden(true)) {
                     Text("about")
                           .font(.custom("Courier New", size: 20))
                           .fontWeight(.bold)
                           .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
-                          .padding(.leading, 250.0)
+//                          .padding(.leading, 250.0)
                   }
 
             }
