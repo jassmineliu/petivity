@@ -40,14 +40,14 @@ struct pethouse: View {
                                         .cornerRadius(15)
                                     
                                     // add cat image
-                                    Image("cat")
+                                    Image(userInfo[0].petType)
                                         .resizable()
                                         .frame(width: 250, height: 250)
                                         .cornerRadius(15)
                                 }
                                 
                                 // name
-                                Text("name: ")
+                            Text("name: \(userInfo[0].petName)")
                                     .font(.custom("Courier New", size: 25))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
@@ -104,7 +104,7 @@ struct pethouse: View {
                     
                     .toolbar {
                           ToolbarItemGroup(placement: .navigationBarLeading) {
-                            NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination: home(userInfo: $userInfo).navigationBarBackButtonHidden(true)) {
                               Image("home")
                                 .resizable()
                                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
