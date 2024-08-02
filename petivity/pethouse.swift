@@ -34,7 +34,7 @@ struct pethouse: View {
                                 
                                 ZStack {
                                     // add background image
-                                    Image("houseBackground")
+                                    Image("house2")
                                         .resizable()
                                         .frame(width: 350, height: 350)
                                         .cornerRadius(15)
@@ -42,8 +42,10 @@ struct pethouse: View {
                                     // add cat image
                                     Image(userInfo[0].petType)
                                         .resizable()
-                                        .frame(width: 250, height: 250)
+                                        .frame(width: 150, height: 150)
                                         .cornerRadius(15)
+                                        .padding(.trailing, 90)
+                                        .padding(.top, 60)
                                 }
                                 
                                 // name
