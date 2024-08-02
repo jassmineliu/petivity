@@ -88,7 +88,7 @@ struct home: View {
                         .foregroundColor(Color(red: 70/255, green: 134/255, blue: 133/255))
                         .padding(.trailing, 250.0)
                 }
-                  NavigationLink(destination: about().navigationBarBackButtonHidden(true)) {
+                  NavigationLink(destination: about(userInfo: $userInfo).navigationBarBackButtonHidden(true)) {
                     Text("about")
                           .font(.custom("Courier New", size: 20))
                           .fontWeight(.bold)

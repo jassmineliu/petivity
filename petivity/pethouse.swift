@@ -11,7 +11,7 @@ struct pethouse: View {
     
     @State private var messageHouse = ""
     @State private var messageFood = ""
-    @State private var happiness = 0
+    @State private var happiness = 5
     @Environment(\.modelContext) var modelContext
     @Binding var userInfo: [userStuff]
     
